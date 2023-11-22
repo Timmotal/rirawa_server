@@ -73,8 +73,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(8080, () => console.log('Server has started on port http://localhost:8080'))
-    // app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    // app.listen(8080, () => console.log('Server has started on port http://localhost:8080'))
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD MOCK DATA ONE TIME */
     // be careful to add this DATA only onetime
