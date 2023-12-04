@@ -29,7 +29,7 @@ export const register = async (req, res) => { // making a call to the database -
       password: passwordHash, // we don't even store the real password there
       picturePath,
       friends,
-      location,
+      location, 
       occupation,
       viewedProfile: Math.floor(Math.random() * 10000),// 1 through 10K
       impressions: Math.floor(Math.random() * 10000),
@@ -74,8 +74,6 @@ export const login = async (req, res) => {
     delete user.password; // delete the password -> so it doesn't get sent to frontend
     res.status(200).json({ token, user });
   } catch (err) {
-    // says we can customize the error message but we will not do that here -> a simple app
-    // can you see why learning via various resources is crucial -> John Smilga already did this 
     res.status(500).json({ error: err.message });
   }
 };
