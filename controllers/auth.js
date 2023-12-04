@@ -34,13 +34,7 @@ export const register = async (req, res) => { // making a call to the database -
       viewedProfile: Math.floor(Math.random() * 10000),// 1 through 10K
       impressions: Math.floor(Math.random() * 10000),
     });
-    const savedUser = await newUser.save(); // save the user
-    // 201 means something has been created
-    // json so that the frontend can receive the response
-    // what Backend Do spend a lot of time
-    //  making sure they Data coming back is correct and in property structure 
-    // that the Fronted can use, otherwise creates more work for the frontend
-    // says the frontend will also use the same format as well
+    const savedUser = await newUser.save(); 
     res.status(201).json(savedUser); // use res provided by express
     // if you have the same naming convention, you can use the exact data from the backend
     // otherwise you find ways to write code that will convert it
