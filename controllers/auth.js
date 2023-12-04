@@ -62,12 +62,6 @@ export const login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
 
-    // He says typically at a company →
-    // they will use a third party authentication way more secure than what we did here,
-    // because Authentication is really big, there’s lots of ways to hack this ⇒
-    // those are preferred in big level organization
-    //bASIC SETUP OF HOW <<< AUTHENTICATION >>> WORKS
-    // AUTHORIZATION is when users logged in are able to do things un-logged users cannot do
   
     // sign the jwt with the ID
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
