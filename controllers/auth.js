@@ -35,9 +35,7 @@ export const register = async (req, res) => { // making a call to the database -
       impressions: Math.floor(Math.random() * 10000),
     });
     const savedUser = await newUser.save(); 
-    res.status(201).json(savedUser); // use res provided by express
-    // if you have the same naming convention, you can use the exact data from the backend
-    // otherwise you find ways to write code that will convert it
+    res.status(201).json(savedUser);
   } catch (err) {
     res.status(500).json({ error: err.message }); // with the error message that MongoDB has returned
   }
