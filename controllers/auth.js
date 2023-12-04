@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"; // sends a user a web token they will use for au
 import User from "../models/User.js";
 
 /* REGISTER USER */
-export const register = async (req, res) => { // making a call to the database -> so async
+export const register = async (req, res) => { 
 
   try {
     const {
@@ -17,8 +17,8 @@ export const register = async (req, res) => { // making a call to the database -
       occupation,
     } = req.body; 
 
-    const salt = await bcrypt.genSalt(); // generate salt we then use to encrypt the password
-    const passwordHash = await bcrypt.hash(password, salt); // hash them together
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(password, salt); 
     // <<<<<<<<<I AM NOT FOCUSED ON THE PROCESS BUT IN A RUSH TO THEM END GOAL>>>>>>>>>>>
 
 
