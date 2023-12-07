@@ -22,17 +22,7 @@ export const createPost = async (req, res) => { //(01:25:00) says sum about how 
     await newPost.save(); // save to MongoDB
     // once we add a post, we need all the posts to be returned to the Frontend, 
     // so it has all the posts (updated) 
-    const post = await Post.find(); // then grab the all the posts
-
-    // you always have to consider what to return and how the frontend will be affected by thgat return
-    // a lot of people sees frontend as easy and this is where things get hard
-    // because you have to consider what the backend is sending you and format that
-    // make sure that when the backend sends you the info you have to update the frontend
-
-    // LOTS OF TIME
-    // the hard part of enterprise applications is how to deal with the APIs
-    // how they are sending it, and how you are formatting it
-    //  sometimes you have different restrictions because of that and that's where things get hard
+    const post = await Post.find(); 
     
     res.status(201).json(post); // 201 reps created something
   } catch (err) {
