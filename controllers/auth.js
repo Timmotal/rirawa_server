@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcrypt";``
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
@@ -19,7 +19,6 @@ export const register = async (req, res) => {
 
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt); 
-    // <<<<<<<<<I AM NOT FOCUSED ON THE PROCESS BUT IN A RUSH TO THEM END GOAL>>>>>>>>>>>
 
 
     const newUser = new User({
@@ -31,13 +30,13 @@ export const register = async (req, res) => {
       friends,
       location, 
       occupation,
-      viewedProfile: Math.floor(Math.random() * 10000),// 1 through 10K
+      viewedProfile: Math.floor(Math.random() * 10000),
       impressions: Math.floor(Math.random() * 10000),
     });
     const savedUser = await newUser.save(); 
     res.status(201).json(savedUser);
   } catch (err) {
-    res.status(500).json({ error: err.message }); // with the error message that MongoDB has returned
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -53,9 +52,9 @@ export const login = async (req, res) => {
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
 
   
-    // sign the jwt with the ID
+  
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-    delete user.password; // delete the password -> so it doesn't get sent to frontend
+    delete user.password; 
     res.status(200).json({ token, user });
   } catch (err) {
     res.status(500).json({ error: err.message });
