@@ -1,5 +1,5 @@
-import bcrypt from "bcrypt"; // allows for password encryption
-import jwt from "jsonwebtoken"; // sends a user a web token they will use for authorization
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 /* REGISTER USER */
@@ -61,3 +61,4 @@ export const login = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+ 
