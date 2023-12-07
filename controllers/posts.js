@@ -57,13 +57,10 @@ export const likePost = async (req, res) => {
     const { id } = req.params; // coming from the URL 
     const { userId } = req.body; // coming from the body
     const post = await Post.findById(id); // grab post information
-    // if userId exists that means post has been liked by that particular person
-    const isLiked = post.likes.get(userId); // grab weather user liked a post or not
 
-    // but is undefined  a truthy or false ? -> false sis
+    const isLiked = post.likes.get(userId);
 
-    // there is an object that includes a list
-    // as it's key -> it gonna have all the IDs and if that exists we're going to delete it
+
 
     if (isLiked) { // this may look simple -> but it turns my brain => it's simplicity
       post.likes.delete(userId); // just tampering with the obj properties, what about true inside though?
