@@ -1,14 +1,12 @@
-// says the POSt is a little bit more complicated than the users
-
 import Post from "../models/Post.js";
 import User from "../models/User.js";
 
 /* CREATE */ 
-export const createPost = async (req, res) => { //(01:25:00) says sum about how it works
+export const createPost = async (req, res) => {
   try {
     const { userId, description, picturePath } = req.body;
     const user = await User.findById(userId);
-    const newPost = new Post({ // create new post into the Database
+    const newPost = new Post({ 
       userId,
       firstName: user.firstName,
       lastName: user.lastName,
@@ -19,9 +17,7 @@ export const createPost = async (req, res) => { //(01:25:00) says sum about how 
       likes: {},
       comments: [],
     });
-    await newPost.save(); // save to MongoDB
-    // once we add a post, we need all the posts to be returned to the Frontend, 
-    // so it has all the posts (updated) 
+    await newPost.save();
     const post = await Post.find(); 
     
     res.status(201).json(post); // 201 reps created something
@@ -65,7 +61,7 @@ export const likePost = async (req, res) => {
     if (isLiked) {
       post.likes.delete(userId);
     } else {
-      post.likes.set(userId, true); // why not also delete the true
+      post.likes.set(userId, true); 
     }
 
     const updatedPost = await Post.findByIdAndUpdate( 
