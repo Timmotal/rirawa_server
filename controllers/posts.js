@@ -68,11 +68,11 @@ export const likePost = async (req, res) => {
       post.likes.set(userId, true); // why not also delete the true
     }
 
-    const updatedPost = await Post.findByIdAndUpdate( // how we update a specific post
+    const updatedPost = await Post.findByIdAndUpdate( 
       id,
-      { likes: post.likes }, //pass in likes to the new post we have been modifying
-      { new: true } // i didn't ask what does this even do -> 
-      // it tells mongoDB to return the modified document and not the original document
+      { likes: post.likes }, 
+      { new: true } 
+      
     );
 
     res.status(200).json(updatedPost);
