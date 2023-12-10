@@ -62,8 +62,8 @@ export const likePost = async (req, res) => {
 
 
 
-    if (isLiked) { // this may look simple -> but it turns my brain => it's simplicity
-      post.likes.delete(userId); // just tampering with the obj properties, what about true inside though?
+    if (isLiked) {
+      post.likes.delete(userId);
     } else {
       post.likes.set(userId, true); // why not also delete the true
     }
