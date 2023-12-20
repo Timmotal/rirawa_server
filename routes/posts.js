@@ -4,7 +4,6 @@ import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
 router.get("/", verifyToken, getFeedPosts);
-// grab only posts a particular user posted 
 router.get("/:userId/posts", verifyToken, getUserPosts);
 
 /* UPDATE */
