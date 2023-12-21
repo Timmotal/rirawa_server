@@ -1,9 +1,7 @@
-import mongoose from "mongoose"; // helps setup the model
-
-// <<<<<<this is where we implement that data mapping drawn in lucid app>>>>>>>>
+import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema(
   {
-    firstName: {// it will have these properties and have validation checks
+    firstName: {
       type: String,
       required: true,
       min: 2,
@@ -15,7 +13,7 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 50,
     },
-    email: { // says normally we would have more configurations for password, but he keeps it simple
+    email: {
       type: String,
       required: true,
       max: 50,
