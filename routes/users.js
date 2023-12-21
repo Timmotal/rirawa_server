@@ -7,12 +7,8 @@ import {
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
-router.get("/:id", verifyToken, getUser); // call the database with this particular ID
+router.get("/:id", verifyToken, getUser);
 router.get("/:id/friends", verifyToken, getUserFriends);
-
-/* UPDATE */
-//  we need both the ID of the current user and the friend we wannt to add/remove
-// also this app friend list works more like twitter not facebook -> follow
 router.patch("/:id/:friendId", verifyToken, addRemoveFriend); 
 
 export default router;
