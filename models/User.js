@@ -37,7 +37,7 @@ const UserSchema = new mongoose.Schema(
     viewedProfile: Number,
     impressions: Number,
   },
-  { timestamps: true } // will give us automatic dates for when it is created and updated... et cetera
+  { timestamps: true } 
 );
 
 
