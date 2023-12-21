@@ -42,10 +42,6 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true } // will give us automatic dates for when it is created and updated... et cetera
 );
 
-// you want to create the Mongoose Schema first
-// and then we pass it into Mongoose.model and we pass it into user
 
-// Very important to set this up before hand 
-// so you don't have to start refactoring and clearing out the mesed up data
 const User = mongoose.model("User", UserSchema);
 export default User;
