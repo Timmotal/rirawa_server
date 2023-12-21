@@ -7,10 +7,6 @@ import {
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
-
-// - Says with the Users we are not going to follow CRUD to the Teeth
-// - Because this will take forever
-/* READ */ // -> Literally READ the data
 router.get("/:id", verifyToken, getUser); // call the database with this particular ID
 router.get("/:id/friends", verifyToken, getUserFriends);
 
