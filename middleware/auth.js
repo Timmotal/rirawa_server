@@ -13,10 +13,7 @@ export const verifyToken = async (req, res, next) => {
     }
     const verified = jwt.verify(token, process.env.JWT_SECRET);
     req.user = verified;
-    next(); // run the next function
-    // for middleware this next() function is what we have to use
-    // so the next one will proceed to the next step of the function (GPT say call-stack)
-    //  says we are not gonna use it yet -> we have no API to...
+    next(); 
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
