@@ -2,9 +2,6 @@ import jwt from "jsonwebtoken";
 
 export const verifyToken = async (req, res, next) => { // next allows us to have the function continued
   try {
-    // from the req in frontend -> we grab the Authorization header,
-    // that is where the token will be set in the frontend
-    //  the front sets this and we grab it in the backend via -> token
     let token = req.header("Authorization");
 
     if (!token) {
