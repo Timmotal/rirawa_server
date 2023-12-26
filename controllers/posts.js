@@ -30,13 +30,13 @@ export const createPost = async (req, res) => {
 export const getFeedPosts = async (req, res) => { // grab the posts of everyone
   try {
     const post = await Post.find();
-    res.status(200).json(post); // reps successful request
+    res.status(200).json(post); 
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
 };
 
-export const getUserPosts = async (req, res) => { // grab only useer post
+export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
     const post = await Post.find({ userId });
@@ -47,7 +47,6 @@ export const getUserPosts = async (req, res) => { // grab only useer post
 };
 
 /* UPDATE */
-// says it is probably the hardest part
 export const likePost = async (req, res) => {
   try {
     const { id } = req.params; // coming from the URL 
