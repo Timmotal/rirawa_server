@@ -49,10 +49,9 @@ export const getUserPosts = async (req, res) => {
 /* UPDATE */
 export const likePost = async (req, res) => {
   try {
-    const { id } = req.params; // coming from the URL 
-    const { userId } = req.body; // coming from the body
-    const post = await Post.findById(id); // grab post information
-
+    const { id } = req.params; 
+    const { userId } = req.body; 
+    const post = await Post.findById(id); 
     const isLiked = post.likes.get(userId);
 
 
