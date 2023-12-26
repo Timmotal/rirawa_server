@@ -42,21 +42,18 @@ export const addRemoveFriend = async (req, res) => {
 
     if (user.friends.includes(friendId)) {
       user.friends = user.friends.filter((id) => id !== friendId);
-      // what is happening here sis -> sounds lame to me
-      //  says we remove the (this current) user from their friend list
       friend.friends = friend.friends.filter((id) => id !== id);
     } else {
       user.friends.push(friendId);
-      friend.friends.push(id); // see here but why are we touching the friend
-      // we touch friend because we are making the logic similar to facebook
+      friend.friends.push(id);
     }
-    await user.save(); // save the list on user and that friend
+    await user.save();
     await friend.save();
 
     const friends = await Promise.all(
       user.friends.map((id) => User.findById(id))
     );
-    const formattedFriends = friends.map( // we then format friends for the frontend again
+    const formattedFriends = friends.map( 
       ({ _id, firstName, lastName, occupation, location, picturePath }) => {
         return { _id, firstName, lastName, occupation, location, picturePath };
       }
