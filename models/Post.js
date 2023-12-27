@@ -1,9 +1,4 @@
 import mongoose from "mongoose";
-// ## Data Modelling → A little bit Advanced
-
-// lots of Trial & Error → then you start to see a different pattern
-
-// - Likes & Comments are the two most complicated things
 
 const postSchema = mongoose.Schema(
   {
