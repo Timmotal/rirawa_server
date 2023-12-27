@@ -19,13 +19,8 @@ const postSchema = mongoose.Schema(
     picturePath: String,
     userPicturePath: String,
     likes: {
-      type: Map, // typically you use an object -> but this will be this, that's how MongoDB saves it
+      type: Map,
       of: Boolean,
-      // all we need to do is to check if the user ID exists in this Map
-      //  and the value will be true always if it exists
-      //  so if you like it ( a post I presume), you add to this map...like wise otherwise
-      // DIDN'T USE AN ARRAY OF STRINGS  of userId -> map is more performant & efficient (01:23:00)
-      //  to see if they liked it or not
     },
     comments: {
       type: Array,
