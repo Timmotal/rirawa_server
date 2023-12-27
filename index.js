@@ -68,7 +68,7 @@ app.use("/posts", postRoutes);
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001; // as a backup
 mongoose
-  .connect(process.env.MONGO_URL, { // surprised we do use quotation for this credential
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
   })
