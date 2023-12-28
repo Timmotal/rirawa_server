@@ -33,10 +33,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));// so we do not have any issues
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true })); 
-app.use(cors()); // will invoke cross origin sharing policies
-// sets the directory of where we keep the assets
-// /we will store this locally, in a real life -> it is stored in an actual storage
-// eg. cloud storage like S3 (13 Mins Tutorial Hours) -> we are keeping things simple
+app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
