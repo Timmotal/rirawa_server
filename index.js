@@ -53,8 +53,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage }); // helps us to save it | we use this to upload a file
 
 /* ROUTES WITH FILES */
-// upload is the middleware here -> he doesn't do the route folder
-// because we need the upload in the index file, right above, so not in a separate file
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 // INSTALL INTELLISENSE
