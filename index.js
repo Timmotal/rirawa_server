@@ -25,8 +25,8 @@ import { users, posts } from "./data/index.js";
 // so we can grab the file URL, specifically when we use the modules, so we can use dir name
 const __filename = fileURLToPath(import.meta.url); 
 const __dirname = path.dirname(__filename); // this is only when you use the type modules
-dotenv.config(); // use dot.env files
-const app = express(); // invoke express app, so we can use our middleware
+dotenv.config();
+const app = express(); 
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
