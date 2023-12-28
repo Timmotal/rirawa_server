@@ -40,8 +40,6 @@ app.use(cors()); // will invoke cross origin sharing policies
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
-// he got the config from the Github repo of Multer
-// / this is how you can save your files, any time someone uploads a file unto your website
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/assets"); // will be saved into this folder
