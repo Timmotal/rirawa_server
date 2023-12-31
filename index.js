@@ -4,10 +4,10 @@ import mongoose from "mongoose"; // data base modelling
 import cors from "cors"; //cross origin requests -> so the domain can be accessed anywhere
 import dotenv from "dotenv"; // to hide certain credentials
 import multer from "multer"; // for files upload
-import helmet from "helmet"; // security package -> for REQUESTS safety
+import helmet from "helmet";
 import morgan from "morgan"; // for login
-import path from "path";// allows us to properly set the paths, when we configure directories
-import { fileURLToPath } from "url";  //and this too
+import path from "path";
+import { fileURLToPath } from "url"; 
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js"; 
 import postRoutes from "./routes/posts.js";
