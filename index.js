@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser"; //to process the request body
 import mongoose from "mongoose"; // data base modelling
-import cors from "cors"; //cross origin requests -> so the domain can be accessed anywhere
+import cors from "cors";
 import dotenv from "dotenv";
 import multer from "multer";
 import helmet from "helmet";
