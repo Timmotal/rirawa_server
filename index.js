@@ -8,7 +8,7 @@ import helmet from "helmet"; // security package -> for REQUESTS safety
 import morgan from "morgan"; // for login
 import path from "path";// allows us to properly set the paths, when we configure directories
 import { fileURLToPath } from "url";  //and this too
-import authRoutes from "./routes/auth.js"; // paths & routes for every type of feature (auth here)
+import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js"; 
 import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
