@@ -5,7 +5,7 @@ import cors from "cors"; //cross origin requests -> so the domain can be accesse
 import dotenv from "dotenv"; // to hide certain credentials
 import multer from "multer"; // for files upload
 import helmet from "helmet";
-import morgan from "morgan"; // for login
+import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url"; 
 import authRoutes from "./routes/auth.js";
