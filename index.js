@@ -19,10 +19,6 @@ import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
 
 /* <<<<<<<<<MIDDLEWARE & PACKAGE CONFIGURATIONS >>>>>>>>>>>>>*/
-// middleware is basically something that runs between different request
-// basically functions that runs between different things
-
-// so we can grab the file URL, specifically when we use the modules, so we can use dir name
 const __filename = fileURLToPath(import.meta.url); 
 const __dirname = path.dirname(__filename); // this is only when you use the type modules
 dotenv.config();
